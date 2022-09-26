@@ -1,0 +1,63 @@
+﻿@model IEnumerable<PostType>
+
+@{
+    ViewData["Title"] = "PostTypes";
+}
+
+<h1>PostType</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table sorting" id="postTypes">
+    <thead>
+        <tr class="home">
+
+            <th>
+                Title
+            </th>
+            <th>
+                Code
+            </th>
+            
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr id="id_@item.PostTypeId" class="@item.Code">
+
+                <td>
+                    @item.Title
+                </td>
+                <td>
+                    @item.Code
+                </td>
+
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.PostTypeId">Edit</a>
+
+                    <a class="confirmDeletion" asp-action="Delete" asp-route-id="@item.PostTypeId">Delete</a>
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@section Scripts {
+
+    <script>
+        $("table#postTypes tbody").sortable({
+            items: "tr:not(.home)",
+            placeholder: "ui-state-highlight",
+            update: function () {
+                let ids = $("table#postTypes tbody").sortable("serialize");
+                let url = "/admin/postTypes/reorder";
+
+                $.post(url, ids, function () { });
+            }
+        })
+    </script>
+}

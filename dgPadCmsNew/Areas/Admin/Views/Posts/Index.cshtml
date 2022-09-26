@@ -1,0 +1,64 @@
+﻿@model IEnumerable<Post>
+
+@{
+    ViewData["Title"] = "Posts";
+}
+
+<h1>Posts</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table sorting" id="posts"">
+    <thead>
+        <tr class="home">
+
+            <th>
+                Title
+            </th>
+            <th>
+                CreationDate
+            </th>
+
+            <th>
+                Summary
+            </th>
+            <th>
+                Detail
+            </th>
+            <th>
+                PostType
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr id="id_@item.Id" class="@item.Title">
+
+            <td>
+                @item.Title
+            </td>
+            <td>
+                @item.CreationDate
+            </td>
+
+            <td>
+                @item.Summary
+            </td>
+            <td>
+                @item.Detail
+            </td>
+            <td>
+                @item.PostType.Title
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                <a class="confirmDeletion" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+<Pagination page-count="@ViewBag.TotalPages" page-target="/admin/products" page-number="@ViewBag.PageNumber" page-range="ViewBag.PageRange"></Pagination>
