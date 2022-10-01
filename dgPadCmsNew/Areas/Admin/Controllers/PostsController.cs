@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace dgPadCmsNew.Areas.Admin.Controllers
 {
-    
+    [Authorize(Roles ="admin")]
     [Area("Admin")]
     public class PostsController : Controller
     {
