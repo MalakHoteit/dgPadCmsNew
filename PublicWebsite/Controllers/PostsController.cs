@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using dgPadCmsNew.Infrastructure;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,9 +10,17 @@ namespace PublicWebsite.Controllers
 {
     public class PostsController : Controller
     {
-        public IActionResult Index(p)
+        private readonly dgPadCmsNewContext context;
+
+        public PostsController(dgPadCmsNewContext context)
         {
-            return View();
+            this.context = context;
+        }
+        public async Task<IActionResult> Index()
+        {
+            
+            return View(await context.Posts.OrderByDescending(x => x.CreationDate).Include(x => x.PostType).ToListAsync());
+
         }
     }
-}
+    }
