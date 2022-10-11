@@ -13,9 +13,9 @@ namespace dgPadCmsNew.Models
     {
         public int PostTypeId { get; set; }
 
-        [Required, MinLength(2, ErrorMessage = "Minimum length is 2")]
+        
         public string Title { get; set; }
-        [Required]
+       
         public string Code { get; set; }
 
         public virtual ICollection<Post> Posts { get; set; }

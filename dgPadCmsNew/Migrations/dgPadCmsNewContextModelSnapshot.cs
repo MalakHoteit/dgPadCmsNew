@@ -231,6 +231,9 @@ namespace dgPadCmsNew.Migrations
                     b.Property<string>("Detail")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Image")
+                       .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("PostTypeId")
                         .HasColumnType("int");
 
@@ -243,6 +246,7 @@ namespace dgPadCmsNew.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("PostTypeId");
+
 
                     b.ToTable("Posts");
                 });

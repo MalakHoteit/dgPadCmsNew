@@ -24,16 +24,24 @@
             </div>
 
             <div class="form-group">
-                <label asp-for="Summary" class="control-label"></label>
-                <textarea asp-for="Summary" class="form-control"></textarea>
-                <span asp-validation-for="Summary" class="text-danger"></span>
+                <label asp-for="Detail" class="control-label"></label>
+                <textarea asp-for="Detail" class="form-control"></textarea>
+                <span asp-validation-for="Detail" class="text-danger"></span>
             </div>
 
             <div class="form-group">
-                <label asp-for="Detail" class="control-label"></label>
-                <input asp-for="Detail" class="form-control" />
-                <span asp-validation-for="Detail" class="text-danger"></span>
+                <label asp-for="Summary" class="control-label"></label>
+                <input asp-for="Summary" class="form-control" />
+                <span asp-validation-for="Summary" class="text-danger"></span>
             </div>
+
+            @*<div class="form-group">
+                <label asp-for="Image" class="control-label"></label>
+                <input asp-for="ImageUpload" class="form-control" />
+                <img src="" id="imgupload" alt="" />
+                <span asp-validation-for="ImageUpload" class="text-danger"></span>
+            </div>*@
+
 
             <div class="form-group">
                 <label asp-for="PostTypeId" class="control-label"></label>
@@ -58,6 +66,10 @@
 
     <script>
         CKEDITOR.replace("Summary");
+
+        //$("#ImagePreview").change(function () {
+        //    readUrl(this);
+        //});
     </script>
 }
 

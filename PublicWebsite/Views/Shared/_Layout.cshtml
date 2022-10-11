@@ -21,15 +21,54 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
+
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Sports" asp-action="Index">Sports</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Fashion" asp-action="Index">Fashion</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Art" asp-action="Index">Art</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Health" asp-action="Index">Health</a>
+                        </li>
+
                     </ul>
+                </div>
+                
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                    <ul class="navbar-nav flex-grow-1 justify-content-end">
+                        @if (User?.Identity?.IsAuthenticated ?? false)
+                        {
+                            <li class="nav-item">
+                                <a asp- controller="Account" asp-action="Edit" class="btn btn-primary">My Account</a>
+                            </li>
+
+                            <li class="nav-item ml-1">
+                                <a asp- controller="Account" asp-action="Logout" class="btn btn-danger">Hi, @User.Identity.Name, Log out</a>
+                            </li>
+                        }
+
+                        else
+                        {
+                            <li class="nav-item">
+                                <a asp- controller="Account" asp-action="Privacy" class="btn btn-success">Log in</a>
+                            </li>
+
+                            <li class="nav-item ml-1">
+                                <a asp- controller="Account" asp-action="" class="btn btn-primary">Register</a>
+                            </li>
+                        }
+
+                    </ul>
+
                 </div>
             </div>
         </nav>
     </header>
-    <div class="container">
+    <div >
         <main role="main" class="pb-3">
             @RenderBody()
         </main>

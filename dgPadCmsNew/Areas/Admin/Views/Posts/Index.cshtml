@@ -9,7 +9,7 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
-<table class="table sorting" id="posts"">
+<table class="table sorting" id="posts">
     <thead>
         <tr class="home">
 
@@ -26,6 +26,7 @@
             <th>
                 Detail
             </th>
+            
             <th>
                 PostType
             </th>
@@ -49,9 +50,11 @@
             <td>
                 @item.Detail
             </td>
+            
             <td>
                 @item.PostType.Title
             </td>
+            
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a>
                 <a class="confirmDeletion" asp-action="Delete" asp-route-id="@item.Id">Delete</a>

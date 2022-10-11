@@ -45,7 +45,7 @@ namespace dgPadCmsNew.Migrations
                     CreationDate = table.Column<DateTime>(nullable: false),
                     Detail = table.Column<string>(nullable: true),
                     Summary = table.Column<string>(nullable: true),
-                    PostTypeId = table.Column<int>(nullable: false)
+                    PostTypeId = table.Column<int>(nullable: false),
                 },
                 constraints: table =>
                 {
@@ -56,8 +56,13 @@ namespace dgPadCmsNew.Migrations
                         principalTable: "PostTypes",
                         principalColumn: "PostTypeId",
                         onDelete: ReferentialAction.Cascade);
+
+                    
+
+
                 });
 
+          
             migrationBuilder.CreateTable(
                 name: "PostTypesAndTaxonomies",
                 columns: table => new

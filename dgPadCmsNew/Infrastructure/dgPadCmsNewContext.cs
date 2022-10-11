@@ -10,10 +10,13 @@ namespace dgPadCmsNew.Infrastructure
 {
     public class dgPadCmsNewContext : IdentityDbContext<AppUser>
     {
+        public dgPadCmsNewContext()
+        {
+        }
+
         public dgPadCmsNewContext(DbContextOptions<dgPadCmsNewContext> options)
             : base(options)
         {
-
         }
 
         public DbSet<Taxonomy> Taxonomies { get; set; }
@@ -25,6 +28,7 @@ namespace dgPadCmsNew.Infrastructure
 
         public DbSet<PostAndTerm> PostsAndTerms { get; set; }
         public DbSet<PostTypeAndTaxonomy> PostTypesAndTaxonomies { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

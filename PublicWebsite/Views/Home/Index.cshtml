@@ -1,7 +1,110 @@
 ﻿
+@model (List<dgPadCmsNew.Models.Taxonomy> taxonomies, List<dgPadCmsNew.Models.Post> posts)
+
 @{
-    ViewData["Title"] = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Home Page";
 }
 
+<div class="row">
 
+    <div class="column">
+        <div class="post-item">
+            <div class="post-title">
+                Barcelona
+            </div>
+
+            <div class="post-img">
+                <a href="https://localhost:44393/Sports">
+                    <img src="~/img/ronald.jpg" />
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="column">
+        <div class="post-item">
+            <div class="post-title">
+                Rami: An Arab Comedian
+            </div>
+            <div class="post-img">
+                <a href="https://localhost:44393/Art">
+                    <img src="~/img/Rami.jpeg" />
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="column">
+        <div class="post-item">
+            <div class="post-title">
+                The most famous painting!
+            </div>
+            <div class="post-img">
+                <a href="https://localhost:44393/Art">
+                    <img src="~/img/Mona-Lisa.jpeg" />
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="column">
+        <div class="post-item">
+            <div class="post-title">
+                Petri Alava
+            </div>
+            <div class="post-img">
+                <a href="https://localhost:44393/Fashion">
+
+                    <img src="~/img/Petri.jpeg" />
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="column">
+        <div class="post-item">
+            <div class="post-title">
+                The lebanese minister of health warns the citizens from?!
+            </div>
+            <div class="post-img">
+                <a href="https://localhost:44393/Health">
+
+                    <img src="~/img/health.jpg" />
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="column">
+        <div class="post-item">
+            <div class="post-title">
+                Who is the youngest player in NBA in 2022?
+            </div>
+            <div class="post-img">
+                <a href="https://localhost:44393/Sports">
+
+                    <img src="~/img/nba.jpg" />
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="column">
+        <div class="post-item">
+            <div class="post-title">
+                World Mental Health Day 2022
+            </div>
+            <div class="post-img">
+                <a href="https://localhost:44393/Health">
+
+                    <img src="~/img/H.jpeg" />
+
+                </a>
+            </div>
+        </div>
+    </div>
+
+</div>
+            

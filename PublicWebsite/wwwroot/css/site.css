@@ -69,3 +69,52 @@ body {
   white-space: nowrap;
   line-height: 60px; /* Vertically center the text there */
 }
+
+.custom-tab{
+    border: 1px solid rgba(var(--b6a,219,219,219),1);
+    border-radius: 2%;
+}
+.tn{
+    float:left;
+}
+.tc{
+    float:right;
+}
+
+.post-title{
+    margin: 5px 2px 5px 2px;
+}
+.post-item{
+   
+    height:75%;
+}
+.post-summary{
+    margin: 10px 2px 10px 2px;
+}
+.column {
+    float: left;
+    padding: 10px;
+    width: 29%;
+    height: 29%;
+}
+.row{
+    display:flex;
+}
+.row::after  {
+    content: "";
+    clear: both;
+    display: table;
+    width:60%;
+    height:60%;
+}
+.post-img{
+
+}
+.post-img img{
+    width:85%;
+    height:280px;
+}
+
+.bg-img {
+    background-image: url('file:///C:\Users\User\source\repos\dgPadCmsNew\PublicWebsite\wwwroot\img\dgPad-Logo-RGB.png');
+}

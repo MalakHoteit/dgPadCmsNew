@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -15,7 +16,13 @@ namespace dgPadCmsNew.Models
         public string Title { get; set; }
         public DateTime CreationDate { get; set; }
         public string Detail { get; set; }
+
+        //public string Image { get; set; }
+
+        
         public string Summary { get; set; }
+
+
 
         [ForeignKey("PostTypeId")]
         public int PostTypeId { get; set; }
@@ -23,11 +30,10 @@ namespace dgPadCmsNew.Models
         public virtual PostType PostType { get; set; }
 
 
-
         public virtual ICollection<PostAndTerm> postAndTerm { get; set; }
 
-        
-
+        //[NotMapped]
+        //public IFormFile ImageUpload { get; set; }
 
     }
 }

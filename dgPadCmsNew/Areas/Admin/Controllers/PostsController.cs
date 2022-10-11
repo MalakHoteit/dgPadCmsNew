@@ -25,7 +25,8 @@ namespace dgPadCmsNew.Areas.Admin.Controllers
         // GET /admin/posts
         public async Task<IActionResult> Index()
         {
-            return View(await context.Posts.OrderByDescending(x => x.Id).Include(x => x.PostType).ToListAsync());
+            return View(await context.Posts.OrderByDescending(x => x.Id).Include(x =>x.PostType).ToListAsync());
+            
         }
 
         
